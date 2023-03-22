@@ -1,0 +1,32 @@
+// Adding media queries inside mixins
+@use "breakpoint";
+
+@mixin phone {
+    @media only screen and (max-width: breakpoint.$sm) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (min-width: (breakpoint.$sm + 1px)) and (max-width: breakpoint.$md) {
+        @content;
+    }
+}
+
+@mixin tablet-landscape {
+    @media only screen and (min-width: (breakpoint.$md + 1px)) and (max-width: breakpoint.$lg) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media only screen and (min-width: (breakpoint.$lg + 1px)) and (max-width: breakpoint.$xl) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (min-width: (breakpoint.$xl + 1px)) and (max-width: breakpoint.$xxl) {
+        @content;
+    }
+}

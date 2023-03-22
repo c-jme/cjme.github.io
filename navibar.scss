@@ -1,0 +1,29 @@
+@use "palette.scss";
+
+.navibar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  color: palette.$primary-font;
+  height: 40px;
+  background-color: palette.$primary-font;
+  width: palette.$main-width;
+  position: fixed;
+
+  &__tabs {
+    display: flex;
+    padding: 50px;
+
+    & a:visited {
+      color: palette.$tab-color;
+  
+    }
+
+    & a:link {
+      text-decoration: none;
+      color: palette.$tab-color;
+    }
+  } 
+}

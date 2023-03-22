@@ -1,0 +1,42 @@
+@use "palette.scss";
+@use "breakpoint.scss";
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  font-size: palette.$parent-fontsize;
+  height: palette.$page-height;
+  width: palette.$page-width;
+  color: palette.$primary-font;
+  
+  &__font {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    height: 30%;
+
+    &--lrg {
+      font-size: palette.$parent-fontsize;
+    }
+  }
+
+
+}
+
+@media only screen and (min-width: (breakpoint.$sm + 1px)) and  (max-width: breakpoint.$md) {
+  .about {
+    display: flex;
+    justify-content: center;
+      
+    &__font {
+      font-size: 20px;
+
+      &--lrg {
+        font-size: palette.$parent-fontsize;  
+      }
+    }
+  }
+}

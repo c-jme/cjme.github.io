@@ -1,0 +1,26 @@
+@use "navibar";
+@use "homepage";
+@use "project";
+@use "about";
+@use "palette";
+@use "breakpointmixin";
+
+
+.bigwrap {
+  font-family: Gloock;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  max-width: 1000px;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+}
+
+#landing {
+  @include breakpointmixin.phone {
+      text-align: center;
+  }
+}

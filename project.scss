@@ -1,0 +1,112 @@
+@use "palette.scss";
+@use "breakpoint";
+
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding-left: 20px;
+  font-size: palette.$parent-fontsize;
+  height: palette.$page-height;
+  color: palette.$primary-font;
+  width: 90vw;
+
+  &__card {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 2px solid black;
+    height: palette.$projects-height;
+    margin-bottom: palette.$margin-bottom;
+
+    &--left {
+      align-self: flex-start;
+      border-radius: palette.$project-border-radius;
+    }
+
+    &--right {
+      font-size: palette.$inprojects-fontsize;
+      margin-left: palette.$project-margin-left;
+      align-self: center;
+    }
+
+    & a {
+      display: flex;
+      // justify-content: center;
+      align-content: center;
+      // align-items: center;
+      height: 50px;
+    }
+  }
+}
+
+@media only screen and (max-width: breakpoint.$sm) { //changes for mobile 
+    .project {
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      border: none;
+      height: 70%;
+
+      &__card {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-content: space-between;
+        max-width: 400px;
+
+        &--right {
+          width: 200px;
+        }
+
+        & a {
+          height: 70px;
+        }
+
+      }
+    }
+
+}
+
+@media only screen and (min-width: (breakpoint.$sm + 1px)) and (max-width: breakpoint.$md) { //changes for 768px
+    .project {
+
+      &__card {
+        height: palette.$cardheight;
+      
+        &--left {
+          display: flex;
+          justify-content: center;
+          max-width: 300px;
+        }
+
+        &--right {
+          font-size: palette.$cardrightfontsize;
+          margin-right: palette.$cardrightmargin;
+        }
+      }
+    }
+}
+
+@media only screen and (min-width: (breakpoint.$md + 1px)) and (max-width: breakpoint.$lg) {
+  .project {
+
+    &__card {
+      height: palette.$cardheight;
+    
+      &--left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 300px;
+      }
+
+      &--right {
+        font-size: palette.$cardrightfontsize;
+        margin-right: palette.$cardrightmargin;
+      }
+    }
+  }
+}

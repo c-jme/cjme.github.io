@@ -1,0 +1,154 @@
+@use "./palette.scss";
+@use "breakpoint";
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: palette.$page-height;
+}
+
+.hero-main {
+  width: palette.$main-width;
+  height: palette.$main-height;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: palette.$primary-font;
+
+  &__text {
+    font-size: 50px;
+    font-family: Gloock;
+    padding-left: palette.$paddingleftandright;
+    padding-right: palette.$paddingleftandright;
+  }
+
+  &__margin {
+    margin: 5rem 0rem 0rem 0rem;
+    display: flex;
+    justify-content: space-between;
+
+    &--bottom {
+      display: flex;
+      align-items: center;
+      font-size: 1.7rem;
+      width: 20%;
+      height: 50%;
+      position: static;
+      margin: palette.$margin;
+      padding-right: 10px;
+    }
+  }
+
+  &--center {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    position: absolute;
+    margin: 1rem 0px 0px 11rem;
+    padding-bottom: palette.$padding-bottom;
+    
+  }
+
+  &__logo {
+    display: inline;
+    margin: palette.$margin;
+    padding-left: 10px;
+  }
+
+}
+
+.techcont {
+  display: flex;
+  height: 200px;
+  margin: palette.$margin;
+  align-content: center;
+  padding-top: 40px;
+  position: relative;
+  
+}
+
+.contacts {
+  margin-left: palette.$margin;
+  text-decoration: none;
+  align-items: center;
+  
+}
+
+
+@media only screen and (max-width: breakpoint.$sm) {
+  
+  .bigwrap {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hero-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 50px;
+
+   
+    &__text {
+      font-size: 30px;
+    }
+    &--center {
+      display: inline;
+      display: flex;
+      align-items: flex-start;
+      margin: 0;
+      padding: 20px;
+      width: 90vw;
+      height: 50px;
+    }
+
+    &__logo {
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: 20px;
+      gap: 20px;
+
+      &--first {
+        margin-left: 100px;
+      }
+    }
+  }
+
+  .techcont { 
+    width: 100%;
+  }
+
+  .contact {
+    margin-top: 50px;
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: (breakpoint.$sm + 1px)) and (max-width: breakpoint.$md) {
+  .home{
+    margin-bottom: 200px; // to create a margin between projects & home page 
+  }
+
+  .hero-main {
+
+    &__margin {
+      margin-bottom: 100px;
+    }
+
+    &--center {
+      margin-left: 50px; // to change the look of tech stack
+    }
+  }
+
+  .techcont {
+    width: 100%
+
+  }
+}
+
+@media only screen and (min-width: (breakpoint.$md + 1px)) and (max-width: breakpoint.$lg) {
+  .home{
+    margin-bottom: 100px; // to create a margin between projects & home page 
+  }
+}
